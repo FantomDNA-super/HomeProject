@@ -25,6 +25,8 @@ public class SampleTest {
         //driver.get(cfg.url());
         driver.get("https://otus.ru/");
         logger.info("Открыта страница otus");
+        logger.debug("test");
+        logger.error("test");
     }
 
     @After
