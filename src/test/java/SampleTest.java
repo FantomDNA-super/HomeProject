@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.Assert;
 
 
 public class SampleTest {
@@ -25,8 +26,15 @@ public class SampleTest {
         //driver.get(cfg.url());
         driver.get("https://otus.ru/");
         logger.info("Открыта страница otus");
-        logger.debug("test");
-        logger.error("test");
+        String i = driver.getCurrentUrl();
+        String j = driver.getTitle();
+        System.out.println("Your page title Is : "+j);
+        //for passed
+        Assert.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям",driver.getTitle());
+        //for failed
+        //Assert.assertEquals("Test",driver.getTitle());
+        //logger.debug("test");
+        //logger.error("test");
     }
 
     @After
